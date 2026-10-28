@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nexorix | My Projects</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #050505;
+    color: white;
+    display: flex;
+}
+
+/* SIDEBAR */
+
+.sidebar {
+    width: 230px;
+    height: 100vh;
+    position: fixed;
+    background: #080808;
+    border-right: 1px solid #00ffff;
+    padding: 25px 15px;
+}
+
+.logo {
+    text-align: center;
+    color: #00ffff;
+    font-size: 28px;
+    font-weight: bold;
+    text-shadow: 0 0 15px #00ffff;
+    margin-bottom: 40px;
+}
+
+.nav button {
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: #aaa;
+    padding: 15px;
+    text-align: left;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+
+.nav button:hover {
+    background: #00ffff22;
+    color: #00ffff;
+}
+
+/* MAIN */
+
+.main {
+    margin-left: 230px;
+    width: calc(100% - 230px);
+    padding: 35px;
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.title h1 {
+    font-size: 42px;
+    color: #00ffff;
+    text-shadow: 0 0 20px #00ffff;
+}
+
+.title p {
+    color: #888;
+    margin-top: 8px;
+}
+
+.search {
+    background: #111;
+    border: 1px solid #00ffff;
+    color: white;
+    padding: 13px;
+    border-radius: 8px;
+    width: 220px;
+    outline: none;
+}
+
+/* PROJECTS */
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 22px;
+}
+
+.card {
+    background: linear-gradient(145deg, #111, #080808);
+    border: 1px solid #00ffff55;
+    border-radius: 15px;
+    padding: 25px;
+    min-height: 210px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-7px);
+    border-color: #00ffff;
+    box-shadow: 0 0 25px #00ffff44;
+}
+
+.icon {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.card h2 {
+    color: #00ffff;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #888;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.play {
+    background: #00ffff;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 7px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.play:hover {
+    box-shadow: 0 0 15px #00ffff;
+}
+
+/* MOBILE */
+
+@media(max-width: 700px) {
+
+    .sidebar {
+        width: 70px;
+        padding: 20px 8px;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .nav button {
+        font-size: 0;
+        text-align: center;
+    }
+
+    .nav button:first-letter {
+        font-size: 20px;
+    }
+
+    .main {
+        margin-left: 70px;
+        width: calc(100% - 70px);
+        padding: 20px;
+    }
+
+    .top {
+        display: block;
+    }
+
+    .title h1 {
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+
+    .search {
+        width: 100%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+
+<div class="sidebar">
+
+    <div class="logo">⚡ NEXORIX</div>
+
+    <div class="nav">
+        <button>🏠 Home</button>
+        <button>🎮 My Projects</button>
+        <button>🐍 Python</button>
+        <button>🎯 Games</button>
+        <button>📚 Learning</button>
+        <button>⚙️ Settings</button>
+    </div>
+
+</div>
+
+
+<!-- MAIN -->
+
+<div class="main">
+
+    <div class="top">
+
+        <div class="title">
+            <h1>MY PROJECTS</h1>
+            <p>Welcome to your coding universe ⚡</p>
+        </div>
+
+        <input
+            class="search"
+            id="search"
+            placeholder="🔎 Search projects..."
+            onkeyup="searchProjects()"
+        >
+
+    </div>
+
+
+    <div class="projects" id="projects">
+
+
+        <div class="card">
+            <div class="icon">🐍</div>
+            <h2>Snake Clash</h2>
+            <p>A classic Snake game made with Python Turtle.</p>
+            <button class="play" onclick="openProject('Snake Clash')">
+                ▶ PLAY
+            </button>
+        </div>
+
+
+        <div class="card">
+            <div class="icon">🏓</div>
+            <h2>Ping Pong</h2>
+            <p>A 2-player Pong game using Python OOP.</p>
+            <button class="play" onclick="openProject('Ping Pong')">
+                ▶ PLAY
+            </button>
+        </div>
+
+
+        <div class="card">
+            <div class="icon">🐹</div>
+            <h2>Capybara Clicker</h2>
+            <p>Click the capybara and increase your score.</p>
+            <button class="play" onclick="openProject('Capybara Clicker')">
+                ▶ PLAY
+            </button>
+        </div>
+
+
+        <div class="card">
+            <div class="icon">🇺🇸</div>
+            <h2>State Guessing</h2>
+            <p>Guess all 50 states of the United States.</p>
+            <button class="play" onclick="openProject('State Guessing')">
+                ▶ START
+            </button>
+        </div>
+
+
+        <div class="card">
+            <div class="icon">✊</div>
+            <h2>Rock Paper Scissors</h2>
+            <p>Play Rock Paper Scissors against the computer.</p>
+            <button class="play" onclick="openProject('Rock Paper Scissors')">
+                ▶ PLAY
+            </button>
+        </div>
+
+
+        <div class="card">
+            <div class="icon">💎</div>
+            <h2>Treasure Island</h2>
+            <p>Choose your path and find the treasure.</p>
+            <button class="play" onclick="openProject('Treasure Island')">
+                ▶ START
+            </button>
+        </div>
+
+
+        <div class="card">
+            <div class="icon">🪙</div>
+            <h2>Heads or Tails</h2>
+            <p>Flip a coin and see what you get.</p>
+            <button class="play" onclick="openProject('Heads or Tails')">
+                ▶ FLIP
+            </button>
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<script>
+
+function openProject(name) {
+    alert(name + " 🚀\n\nYour Python project will open here!");
+}
+
+function searchProjects() {
+
+    let search = document
+        .getElementById("search")
+        .value
+        .toLowerCase();
+
+    let cards = document.querySelectorAll(".card");
+
+    cards.forEach(card => {
+
+        let name = card
+            .querySelector("h2")
+            .innerText
+            .toLowerCase();
+
+        if (name.includes(search)) {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
+
+    });
+}
+
+</script>
+
+</body>
+</html>
